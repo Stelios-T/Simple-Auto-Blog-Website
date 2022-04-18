@@ -1,0 +1,18 @@
+{
+  "name": "auto-blog-site",
+  "version": "1.0.0",
+  "description": "A blogging site for car lover",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express-fileupload": "^1.3.1",
+    "express.js": "^1.0.0",
+    "firebase": "^9.6.11",
+    "nodemon": "^2.0.15"
+  }
+}
