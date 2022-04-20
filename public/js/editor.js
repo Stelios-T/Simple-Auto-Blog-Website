@@ -67,7 +67,8 @@ publishBtn.addEventListener('click', () => {
             title: blogTitleField.value,
             article: articleField.value,
             bannerImage: bannerPath,
-            publishedAt: `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`
+            publishedAt: `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`,
+            author: auth.currentUser.email.split("@")[0] //this return ["example"]
         })
         .then(() => {
             location.href = `/${docName}`;
@@ -80,3 +81,9 @@ publishBtn.addEventListener('click', () => {
 
 
 // to do: check for user logged in or not
+auth.onAuthStateChanged((user) => {
+    if(!user) {
+        location.replace("/admin"); //this will re-direct to admin route if no one is logged
+
+    }
+})
