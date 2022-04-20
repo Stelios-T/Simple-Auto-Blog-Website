@@ -84,6 +84,5 @@ publishBtn.addEventListener('click', () => {
 auth.onAuthStateChanged((user) => {
     if(!user) {
         location.replace("/admin"); //this will re-direct to admin route if no one is logged
-
     }
 })
