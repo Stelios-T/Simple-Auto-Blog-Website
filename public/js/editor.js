@@ -78,3 +78,5 @@ publishBtn.addEventListener('click', () => {
     }
 })
 
+
+// to do: check for user logged in or not
