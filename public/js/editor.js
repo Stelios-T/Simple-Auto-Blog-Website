@@ -80,9 +80,32 @@ publishBtn.addEventListener('click', () => {
 })
 
 
-// to do: check for user logged in or not
+//check for user logged in or not
 auth.onAuthStateChanged((user) => {
     if(!user) {
         location.replace("/admin"); //this will re-direct to admin route if no one is logged
     }
 })
+
+
+//checking for existing edits
+/*
+let blogID = location.pathname.split("/");
+blogID.shift(); //it will remove first ele which is empty from the array
+
+if(blogID[0] != "editor") {
+    //means we are in existing blog edit route
+    let docRef = db.collection("blogs").doc(decodeURI(blogID[0]));
+    docRef.get().then((doc) => {
+        if(doc.exists) {
+            let data = doc.data();
+            bannerPath = data.bannerImage;
+            banner.style.backgroundImage = `url(${bannerPath})`;
+            blogTitleField.value = data.title;
+            articleField.value = data.article;
+        } else {
+            location.replace("/");
+        }
+    })
+}
+*/
