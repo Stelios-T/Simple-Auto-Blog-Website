@@ -23,11 +23,11 @@ const setupBlog = (data) => {
     publish.innerHTML += data.publishedAt;
     publish.innerHTML += ` -- ${data.author}`;
 
-    try {
+    try {  
         if(data.author == auth.currentUser.email.split('@')[0]){
             let editBtn = document.getElementsById('edit-blog-btn');
             editBtn.style.display = "inline";
-            editBtn.href = `${blogId}/editor`;
+            editBtn.href = `${blogId}/editor.html`;
         }
     } catch {
         //nothing

@@ -50,16 +50,22 @@ let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oc
 
 publishBtn.addEventListener('click', () => {
     if(articleField.value.length && blogTitleField.value.length){
-        // generating id
-        let letters = 'abcdefghijklmnopqrstuvwxyz';
-        let blogTitle = blogTitleField.value.split(" ").join("-");
-        let id = '';
-        for(let i = 0; i < 4; i++){
-            id += letters[Math.floor(Math.random() * letters.length)];
+        
+        let docName;
+        if(blogID[0] == 'editor') {
+            // generating id
+            let letters = 'abcdefghijklmnopqrstuvwxyz';
+            let blogTitle = blogTitleField.value.split(" ").join("-");
+            let id = '';
+            for(let i = 0; i < 4; i++){
+                id += letters[Math.floor(Math.random() * letters.length)];
+            }
+            // setting up docName
+            docName = `${blogTitle}-${id}`;
+        } else {
+            docName = decodeURI(blogID[0]);
         }
-
-        // setting up docName
-        let docName = `${blogTitle}-${id}`;
+         
         let date = new Date(); // for published at info
 
         //access firstore with db variable;
@@ -89,7 +95,7 @@ auth.onAuthStateChanged((user) => {
 
 
 //checking for existing edits
-/*
+
 let blogID = location.pathname.split("/");
 blogID.shift(); //it will remove first ele which is empty from the array
 
@@ -108,4 +114,3 @@ if(blogID[0] != "editor") {
         }
     })
 }
-*/

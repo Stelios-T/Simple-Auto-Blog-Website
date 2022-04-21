@@ -54,7 +54,6 @@ app.get("/:blog/editor", (req, res) => {
     res.sendFile(path.join(initial_path, "editor.html"));
 })
 
-
 app.use((req, res) => {
     res.json("404");
 })
