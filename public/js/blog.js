@@ -23,15 +23,17 @@ const setupBlog = (data) => {
     publish.innerHTML += data.publishedAt;
     publish.innerHTML += ` -- ${data.author}`;
 
-    try {  
+    try {
         if(data.author == auth.currentUser.email.split('@')[0]){
-            let editBtn = document.getElementsById('edit-blog-btn');
+            let editBtn = document.getElementById('edit-blog-btn');
             editBtn.style.display = "inline";
-            editBtn.href = `${blogId}/editor.html`;
+            editBtn.href = `${blogId}/editor`;
         }
     } catch {
-        //nothing
+        //nothing here
     }
+       
+        
 
     const article = document.querySelector('.article');
     addArticle(article, data.article);
