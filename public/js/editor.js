@@ -99,6 +99,8 @@ auth.onAuthStateChanged((user) => {
 let blogID = location.pathname.split("/");
 blogID.shift(); //it will remove first ele which is empty from the array
 
+
+//normally it was blogID[0] != "editor"
 if(blogID[0] != "editor") {
     //means we are in existing blog edit route
     let docRef = db.collection("blogs").doc(decodeURI(blogID[0]));
@@ -111,6 +113,7 @@ if(blogID[0] != "editor") {
             articleField.value = data.article;
         } else {
             location.replace("/");
+            console.log("Problem here")
         }
     })
 }

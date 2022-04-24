@@ -16,11 +16,13 @@ const setupLoginButton = () => {
         callbacks: {
             signInSuccessWithAuthResult: function(authResult, redirectURL) {
                 login.style.display = "none";
+                location.reload();
                 return false;
             }    
         }, 
         signInFlow: "popup",
-        signInOptions: [firebase.auth.GoogleAuthProvider.PROVIDER_ID]
+        signInOptions: [firebase.auth.GoogleAuthProvider.PROVIDER_ID, firebase.auth.EmailAuthProvider.PROVIDER_ID ]
+        
     })
 
 }
