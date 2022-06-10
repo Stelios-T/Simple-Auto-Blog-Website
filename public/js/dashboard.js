@@ -1,13 +1,22 @@
+
+
 let ui = new firebaseui.auth.AuthUI(auth);
 let login = document.querySelector('.login');
 const blogSection = document.querySelector('.blogs-section');
 
 auth.onAuthStateChanged((user) => {
-    if(user) {
+
+    if ((user) && (auth.currentUser.email.split('@')[0] == "stelios.toump")) {
         login.style.display = "none";
+        getAdminBlogs();
+
+    } else if(user) {
         
-        console.log("TEsting2");
-    } else {
+        login.style.display = "none";
+        getUserWrittenBlogs();
+
+    }  else {
+
         setupLoginButton();
     }
 })
@@ -22,7 +31,7 @@ const setupLoginButton = () => {
             }    
         }, 
         signInFlow: "popup",
-        signInOptions: [firebase.auth.GoogleAuthProvider.PROVIDER_ID, firebase.auth.EmailAuthProvider.PROVIDER_ID ]
+        signInOptions: [firebase.auth.GoogleAuthProvider.PROVIDER_ID, firebase.auth.EmailAuthProvider.PROVIDER_ID,  ]
  
     })
 
@@ -30,6 +39,7 @@ const setupLoginButton = () => {
 
 //fetch user written blogs
 const getUserWrittenBlogs = () => {
+
     db.collection("blogs").where("author", "==", auth.currentUser.email.split('@')
     [0])
     .get()
@@ -41,6 +51,23 @@ const getUserWrittenBlogs = () => {
     .catch((error) => {
         console.log("Error getting blogs");
     })
+
+}
+
+//fetch users written blogs for admin
+const getAdminBlogs = () => {
+
+    db.collection("blogs")
+    .get()
+    .then((blogs) => {
+        blogs.forEach((blog) => {
+            createBlog(blog);
+        })
+    })
+    .catch((error) => {
+        console.log("Error getting blogs");
+    })
+
 }
 
 const createBlog = (blog) => {
