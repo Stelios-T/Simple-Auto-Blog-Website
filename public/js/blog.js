@@ -1,6 +1,4 @@
-
 let blogId = decodeURI(location.pathname.split("/").pop());
-
 let docRef = db.collection("blogs").doc(blogId);
 
 docRef.get().then((doc) => {
@@ -33,8 +31,6 @@ const setupBlog = (data) => {
         //nothing here
     }
        
-        
-
     const article = document.querySelector('.article');
     addArticle(article, data.article);
 }
@@ -77,4 +73,25 @@ const addArticle = (ele, data) => {
         }
     })
 }
+
+if (document.getElementById("disqus_thread")) {
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    
+    /* var disqus_config = function () {
+    this.page.url = blogId;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = blogId; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    }; */
+    
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://car-blog-1.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+}
+
+
+
 

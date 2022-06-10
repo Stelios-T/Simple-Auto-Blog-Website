@@ -5,7 +5,8 @@ const blogSection = document.querySelector('.blogs-section');
 auth.onAuthStateChanged((user) => {
     if(user) {
         login.style.display = "none";
-        getUserWrittenBlogs();
+        
+        console.log("TEsting2");
     } else {
         setupLoginButton();
     }
@@ -22,7 +23,7 @@ const setupLoginButton = () => {
         }, 
         signInFlow: "popup",
         signInOptions: [firebase.auth.GoogleAuthProvider.PROVIDER_ID, firebase.auth.EmailAuthProvider.PROVIDER_ID ]
-        
+ 
     })
 
 }
