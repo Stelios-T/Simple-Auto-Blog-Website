@@ -16,9 +16,22 @@ body{
 }
 
 /* login hover effect */
+.firebaseui-idp-button {
+    background: #fff !important;
+    color: #000 !important;
+    position: relative;
+    margin-top: 50%;
+}
+
+.firebaseui-idp-button .firebaseui-idp-text{
+    color: #000 !important;
+    transition: 0.3s;
+}
 
 .firebaseui-idp-button:hover{
     background: #000 !important;
+    position: relative;
+    margin-top: 50%;
 }
 
 .firebaseui-idp-button:hover .firebaseui-idp-text{
