@@ -1,5 +1,3 @@
-const { getAuth } = require('firebase-admin/auth');
-
 let ui = new firebaseui.auth.AuthUI(auth);
 
 auth.onAuthStateChanged((user) => {
@@ -16,7 +14,8 @@ auth.onAuthStateChanged((user) => {
 //fetch users written blogs for admin
 const getUsers = () => {
     
-    listAllUsers();
+    //listAllUsers();
+    
     /* var user = firebase.auth().currentUser;
 
     user.delete().then(function() {
