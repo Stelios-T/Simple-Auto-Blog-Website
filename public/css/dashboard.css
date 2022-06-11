@@ -16,11 +16,19 @@ body{
 }
 
 .heading {
+    color:rgba(0, 0, 0, 0.5);
+    font-size: 60px;
+    text-align: center;
+    position: relative;
+    margin: 100px 0 20px;
+}
+
+#welcome {
     color: rgba(0, 0, 0, 0.5);
     font-size: 60px;
     text-align: center;
     position: relative;
-    margin-top: -10%;
+    margin-top: -15%;
 }
 
 
