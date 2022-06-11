@@ -62,7 +62,14 @@ app.use((req, res) => {
     res.json("404");
 })
 
+
+/* app.listen(process.env.PORT || 3000, '0.0.0.0', () => {
+    console.log('listening......');
+}) */
+
 //Run your server on 3000 port.
-app.listen(process.env.PORT || 3000, '0.0.0.0', () => {
+var server_port = process.env.YOUR_PORT || process.env.PORT || 3000;
+var server_host = process.env.YOUR_HOST || '0.0.0.0';
+app.listen(server_port, server_host, '0.0.0.0', () => {
     console.log('listening......');
 })
