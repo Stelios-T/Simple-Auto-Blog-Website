@@ -15,36 +15,49 @@ body{
     background: #fff;
 }
 
-/* login hover effect #0f69c5 */
-.firebaseui-idp-button {
-    background: #fff !important;
-    color: #000 !important;
-    position: relative;
-    margin-top: 50%;
-}
-
-.firebaseui-idp-button .firebaseui-idp-text{
-    color: #000 !important;
-    transition: 0.3s;
-}
-
-.firebaseui-idp-button:hover{
-    background: #000 !important;
-    position: relative;
-    margin-top: 50%;
-}
-
-.firebaseui-idp-button:hover .firebaseui-idp-text{
-    color: #fff !important;
-    transition: 0.3s;
-}
-
 .heading {
     color: rgba(0, 0, 0, 0.5);
     font-size: 60px;
     text-align: center;
     position: relative;
-    margin: 100px 0 20px;
+    margin-top: -10%;
+}
+
+
+#loginUI {
+    position: absolute;
+    top: 47%;
+    border-radius: 5%;
+
+}
+.firebaseui-id-submit {
+    background: #0f69c5 !important;
+}
+/* login hover effect #0f69c5 */
+.firebaseui-idp-button {
+    background: #0f69c5 !important;
+    border-radius: 5%;
+    position: relative;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.firebaseui-idp-button .firebaseui-idp-text{
+    color: #fff !important;
+    transition: 0.3s;
+}
+
+.firebaseui-idp-button:hover{
+    background: navy !important;
+    border-radius: 5%;
+    position: relative;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.firebaseui-idp-button:hover .firebaseui-idp-text{
+    color: #fff !important;
+    transition: 0.3s;
 }
 
 .btn.grey{
