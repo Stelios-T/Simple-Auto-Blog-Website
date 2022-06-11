@@ -67,9 +67,9 @@ app.use((req, res) => {
     console.log('listening......');
 }) */
 
-//Run your server on 3000 port.
-/* var server_port = process.env.YOUR_PORT || process.env.PORT || 5000;
-var server_host = process.env.YOUR_HOST || '0.0.0.0'; */
-app.listen(process.env.PORT || 5000, () => {
+const port = process.env.PORT || 3000;
+const host = '0.0.0.0'
+
+app.listen(port, host, () => {
     console.log('listening......');
 })
