@@ -2,10 +2,10 @@
   "name": "auto-blog-site",
   "version": "1.0.0",
   "description": "A blogging site for car lover",
-  "main": "server.js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon server.js" 
+    "start": "nodemon index.js" 
   },
   "author": "",
   "license": "ISC",
