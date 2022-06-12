@@ -42,16 +42,34 @@ app.post('/upload', (req, res) => {
         }
     })
 })
+app.get("/admin", (req, res) => {
+    res.sendFile(path.join(initial_path, "dashboard.html"));
+})
+
+app.get("/users", (req, res) => {
+    res.sendFile(path.join(initial_path, "users.html"));
+})
 
 app.get("/:blog", (req, res) => {
     res.sendFile(path.join(initial_path, "blog.html"));
+})
+
+app.get("/:blog/editor", (req, res) => {
+    res.sendFile(path.join(initial_path, "editor.html"));
 })
 
 app.use((req, res) => {
     res.json("404");
 })
 
-//Run your server on 3000 port.
-app.listen("3000", () => {
+
+/* app.listen(process.env.PORT || 3000, '0.0.0.0', () => {
+    console.log('listening......');
+}) */
+
+const port = process.env.PORT || 5000;
+const host = '0.0.0.0'
+
+app.listen(port, host, () => {
     console.log('listening......');
 })
