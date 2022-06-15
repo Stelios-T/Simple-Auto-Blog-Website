@@ -2,6 +2,7 @@ let blogId = decodeURI(location.pathname.split("/").pop());
 let docRef = db.collection("blogs").doc(blogId);
 
 docRef.get().then((doc) => {
+    console.log(doc)
     if(doc.exists){
         setupBlog(doc.data());
     } else{
@@ -9,7 +10,9 @@ docRef.get().then((doc) => {
     }
 })
 
+
 const setupBlog = (data) => {
+
     const banner = document.querySelector('.banner');
     const blogTitle = document.querySelector('.title');
     const titleTag = document.querySelector('title');
@@ -34,6 +37,7 @@ const setupBlog = (data) => {
     const article = document.querySelector('.article');
     addArticle(article, data.article);
 }
+
 
 const addArticle = (ele, data) => {
     data = data.split("\n").filter(item => item.length);

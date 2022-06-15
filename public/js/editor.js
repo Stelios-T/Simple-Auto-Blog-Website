@@ -100,8 +100,9 @@ let blogID = location.pathname.split("/");
 blogID.shift(); //it will remove first ele which is empty from the array
 
 
-//normally it was blogID[0] != "editor"
+//normally it was blogID[0] != "editor.html"
 if(blogID[0] != "editor") {
+    
     //means we are in existing blog edit route
     let docRef = db.collection("blogs").doc(decodeURI(blogID[0]));
     docRef.get().then((doc) => {
