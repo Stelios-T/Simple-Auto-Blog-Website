@@ -1,21 +1,20 @@
-//install all packages we need
+//install all packages
 const express = require('express');
 const path = require('path');
 
 const fileupload = require('express-fileupload');
 
-//store your public folder path inside a variable.
+//public folder path inside a variable.
 let initial_path = path.join(__dirname, "public");
 
-//Create expressJS server. 
-//Set public folder path to static path. 
-//Also use app.use(fileupload()) to enable file uploads.
+//expressJS server. 
+//public folder path to static path. 
+//use app.use(fileupload()) to enable file uploads.
 const app = express();
 app.use(express.static(initial_path));
 
 app.use(fileupload());
 
-//Make a home route and in response send home.html file. 
 app.get('/', (req, res) => {
     res.sendFile(path.join(initial_path, "home.html"));
 })
@@ -32,16 +31,16 @@ app.post('/upload', (req, res) => {
     // image upload path
     let path = 'public/uploads/' + imagename;
 
-    // create upload
     file.mv(path, (err, result) => {
         if(err){
             throw err;
         } else{
-            // our image upload path
+            //image upload path
             res.json(`uploads/${imagename}`)
         }
     })
 })
+
 app.get("/admin", (req, res) => {
     res.sendFile(path.join(initial_path, "dashboard.html"));
 })
@@ -61,7 +60,6 @@ app.get("/:blog/editor", (req, res) => {
 app.use((req, res) => {
     res.json("404");
 })
-
 
 /* app.listen(process.env.PORT || 3000, '0.0.0.0', () => {
     console.log('listening......');
