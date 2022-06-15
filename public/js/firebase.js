@@ -1,4 +1,4 @@
-// TODO: Replace the following with your app's Firebase project configuration
+// Firebase project configuration
 let firebaseConfig = {
   apiKey: "AIzaSyC61QdeTI288q_6FYmrEE2UJIkbQ3YaMRg",
   authDomain: "project-db0c9.firebaseapp.com",

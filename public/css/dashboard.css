@@ -16,7 +16,7 @@ body{
 }
 
 .heading {
-    color:rgba(0, 0, 0, 0.5);
+    color:rgba(0, 0, 0, 0.7);
     font-size: 60px;
     text-align: center;
     position: relative;
@@ -24,7 +24,7 @@ body{
 }
 
 #welcome {
-    color: rgba(0, 0, 0, 0.5);
+    color: rgba(0, 0, 0, 0.7);
     font-size: 60px;
     text-align: center;
     position: relative;
@@ -34,20 +34,56 @@ body{
 
 #loginUI {
     position: absolute;
-    top: 47%;
+    top: 50%;
     border-radius: 5%;
 
 }
+
+
+.btn.grey{
+    background: #c5c5c5;
+    color: #000;
+    margin: 0 10px;
+}
+
+.btn.grey:hover{
+    background: #9fb0e3;
+    color: #000;
+    margin: 0 10px;
+}
+
+.btn.danger{
+    background: #f00;
+    color: #fff;
+}
+
+.btn.danger:hover{
+    background: #FF6666;
+    color: #fff;
+}
+
 .firebaseui-id-submit {
     background: #0f69c5 !important;
 }
+
 /* login hover effect #0f69c5 */
 .firebaseui-idp-button {
     background: #0f69c5 !important;
-    border-radius: 5%;
     position: relative;
     margin-top: 5%;
     margin-bottom: 5%;
+}
+
+.firebaseui-idp-button, .firebaseui-tenant-button {
+    direction: rtr;
+    font-weight: 500;
+    height: 20px;
+    line-height: normal;
+    max-width: 1000px;
+    min-width: 100px;
+    min-height: 50px;
+    padding: 8px 16px;
+    text-align: left;
 }
 
 .firebaseui-idp-button .firebaseui-idp-text{
@@ -55,9 +91,9 @@ body{
     transition: 0.3s;
 }
 
+
 .firebaseui-idp-button:hover{
     background: navy !important;
-    border-radius: 5%;
     position: relative;
     margin-top: 5%;
     margin-bottom: 5%;
@@ -68,13 +104,32 @@ body{
     transition: 0.3s;
 }
 
-.btn.grey{
-    background: #c5c5c5;
-    color: #000;
-    margin: 0 10px;
+/*
+firebaseui-card-header
+firebaseui-card-content
+firebaseui-card-actions
+firebaseui-card-footer
+*/
+.firebaseui-container.mdl-card{
+    margin-top: -5%;
 }
 
-.btn.danger{
-    background: #f00;
-    color: #fff;
+.mdl-shadow--2dp {
+    box-shadow: 0 0px 0px 0 rgb(0 0 0 / 14%), 0 0px 0px 0px rgb(0 0 0 / 20%), 0 0px 0px 0 rgb(0 0 0 / 12%);
 }
+
+
+.mdl-textfield {
+    
+    position: relative;
+    font-size: 16px;
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 20px 0;
+}
+
+.firebaseui-title {
+    color: rgba(0, 0, 0, 0.5) !important;
+}
+

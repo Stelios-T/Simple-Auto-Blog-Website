@@ -16,7 +16,12 @@ auth.onAuthStateChanged((user) => {
         getUserWrittenBlogs();
 
     }  else {
-
+        login.innerHTML += `
+        <a href="/">
+            <img src="img/logo.png" class="logo" style="position: absolute; top: 3%; left: 2%; width: 8.5%; height: 5%;" alt="">
+        </a>
+        <h5 class="text" style="color: rgba(0, 0, 0, 0.4); position: fixed; bottom: 10%;">*select SIGN IN if you don't have an account to create a new one</h5>
+        `
         setupLoginButton();
     }
 })
@@ -32,7 +37,7 @@ const setupLoginButton = () => {
         }, 
         signInFlow: "popup",
         signInOptions: [firebase.auth.EmailAuthProvider.PROVIDER_ID, firebase.auth.GoogleAuthProvider.PROVIDER_ID  ]
- 
+        
     })
 
 }
